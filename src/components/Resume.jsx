@@ -54,7 +54,7 @@ const Resume = () => {
                 <div className="testimonial__card">
                     <h2>Btech</h2>
                     <p>2022 - present<br />Lovely Professional University</p>
-                    <h4>8.06/10.00</h4>
+                    <h4>8.12/10.00</h4>
                 </div>
                 <div className="testimonial__card">
                     <h2>Intermediate</h2>
