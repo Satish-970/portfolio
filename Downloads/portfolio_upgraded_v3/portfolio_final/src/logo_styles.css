@@ -1,0 +1,35 @@
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.nav-logo-gif {
+  height: 36px;
+  width: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: contain;
+}
+
+.nav-logo-gif:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(232, 184, 75, 0.35);
+}
+
+.nav-logo-rotating {
+  animation: navSpin 3s linear infinite;
+}
+
+@keyframes navSpin {
+  to { transform: rotate(360deg); }
+}
+
+.nav-tour-text {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+}
