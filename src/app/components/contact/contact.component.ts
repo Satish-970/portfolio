@@ -38,8 +38,9 @@ type ContactStatus = '' | 'loading' | 'success' | 'error';
             <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
             <div *ngIf="contactStatus === 'success'" class="contact__submit-status success"><i class="ri-checkbox-circle-line"></i>Message sent! I'll get back to you soon.</div>
             <div *ngIf="contactStatus === 'error'" class="contact__submit-status error"><i class="ri-error-warning-line"></i>{{ contactError }}</div>
-            <button type="submit" class="btn" [disabled]="contactStatus === 'loading'">
-              <i [class]="contactStatus === 'loading' ? 'ri-loader-4-line spin' : 'ri-send-plane-line'"></i>
+            <button type="submit" class="btn" [disabled]="contactStatus === 'loading'" style="position:relative">
+              <i *ngIf="contactStatus !== 'loading'" class="ri-send-plane-line"></i>
+              <i *ngIf="contactStatus === 'loading'" class="ri-loader-4-line" style="animation:spin 0.8s linear infinite;display:inline-block"></i>
               {{ contactStatus === 'loading' ? 'Sending...' : 'Send Message' }}
             </button>
           </form>

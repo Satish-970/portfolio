@@ -192,7 +192,7 @@ import { scrollToSection } from '../../shared/section-navigation';
           <span class="hero__lastname">Pakalapati</span>
           <div class="hero__role">Data Analyst &amp; Full Stack Developer</div>
           <p class="hero__desc">
-            A dynamic Data Analyst &amp; Developer — fiercely dedicated to unlocking insights through data and driving AI-powered breakthroughs. Fusing razor-sharp analytical prowess with cutting-edge development expertise.
+            Satish, A dynamic Data Analyst &amp; Developer — fiercely dedicated to unlocking insights through data and driving AI-powered breakthroughs. Fusing razor-sharp analytical prowess with cutting-edge development expertise.
           </p>
           <div class="hero__actions">
             <a href="mailto:satishpakalapati65@gmail.com" class="btn">

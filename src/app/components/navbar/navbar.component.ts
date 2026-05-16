@@ -8,44 +8,18 @@ type Theme = 'dark' | 'light';
   selector: 'app-navbar',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <nav class="navbar-futuristic">
-      <div class="nav__bar">
-        <div class="nav__header">
-          <a href="/home" class="nav-logo-link" aria-label="Satish Pakalapati home" (click)="goTo($event, 'home')">
-            <img class="nav-logo-gif" src="assets/logo.gif" alt="Satish Pakalapati logo" />
-          </a>
-          <button class="nav__menu__btn" type="button" aria-label="Toggle navigation" (click)="isMenuOpen = !isMenuOpen">
-            <i [class]="isMenuOpen ? 'ri-close-line' : 'ri-menu-3-line'"></i>
-          </button>
-        </div>
-
-        <ul class="nav__links" [class.open]="isMenuOpen">
-          <li *ngFor="let link of navLinks" class="link" [class.btn]="link.isButton" [class.active]="activeSection === link.id">
-            <a [href]="'/' + link.id" (click)="goTo($event, link.id)">
-              <span>{{ link.label }}</span>
-              <span *ngIf="activeSection === link.id && !link.isButton" class="active-line"></span>
-            </a>
-          </li>
-          <li>
-            <button class="theme-switch" type="button" (click)="toggleTheme()" [attr.aria-label]="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme'">
-              <i [class]="theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line'"></i>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  `,
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
   readonly navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'resume', label: 'Resume' },
+    { id: 'home',    label: 'Home'     },
+    { id: 'about',   label: 'About'    },
+    { id: 'resume',  label: 'Resume'   },
     { id: 'project', label: 'Projects' },
-    { id: 'service', label: 'Skills' },
-    { id: 'blog', label: 'Blog' },
-    { id: 'contact', label: 'Contact', isButton: true },
+    { id: 'service', label: 'Skills'   },
+    { id: 'blog',    label: 'Blog'     },
+    { id: 'contact', label: 'Contact'  },
   ];
 
   theme: Theme = 'dark';
@@ -90,16 +64,12 @@ export class NavbarComponent implements OnInit, AfterViewInit, OnDestroy {
         let bestId = this.activeSection;
         let bestRatio = 0;
         visibility.forEach((ratio, id) => {
-          if (ratio > bestRatio) {
-            bestId = id;
-            bestRatio = ratio;
-          }
+          if (ratio > bestRatio) { bestId = id; bestRatio = ratio; }
         });
         this.activeSection = bestId;
       },
       { threshold: [0, 0.2, 0.5, 0.8] },
     );
-
-    document.querySelectorAll('section[id], header[id]').forEach((section) => this.observer?.observe(section));
+    document.querySelectorAll('section[id], header[id]').forEach((s) => this.observer?.observe(s));
   }
 }
