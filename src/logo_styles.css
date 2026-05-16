@@ -18,18 +18,3 @@
   box-shadow: 0 0 16px rgba(232, 184, 75, 0.35);
 }
 
-.nav-logo-rotating {
-  animation: navSpin 3s linear infinite;
-}
-
-@keyframes navSpin {
-  to { transform: rotate(360deg); }
-}
-
-.nav-tour-text {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--gold);
-  letter-spacing: 0.06em;
-  opacity: 0.8;
-}

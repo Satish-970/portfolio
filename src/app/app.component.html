@@ -1,0 +1,29 @@
+<!-- Figma-style arrow cursor -->
+<div class="custom-cursor" #cursor>
+  <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 1L17 9.5L10.5 11.2L8.2 18L3 1Z" fill="#e8b84b" stroke="#e8b84b" stroke-width="1" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<!-- Preloader -->
+<div class="preloader" #preloader>
+  <p class="preloader__quote" #quoteEl></p>
+  <span class="preloader__author" #authorEl></span>
+  <div class="preloader__bar-wrap">
+    <div class="preloader__bar" #barEl></div>
+  </div>
+</div>
+
+<app-navbar />
+<main>
+  <app-hero />
+  <app-banner />
+  <app-about />
+  <app-resume />
+  <app-projects />
+  <app-skills />
+  <app-blog />
+  <app-contact />
+</main>
+<app-footer />
+<app-scroll-top />
